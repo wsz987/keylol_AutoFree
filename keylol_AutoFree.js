@@ -136,6 +136,9 @@ function rollRequest(params = { cookie: '', hash: '' }) {
             resultMsg = '很遗憾，你没有抽到什么好东西\n'
             $.log(resultMsg);
           }
+        }else {
+          resultMsg = '❗️ 不可参加\n请检查条件：\n' + requirement
+          $.log(resultMsg);
         }
       } catch (e) {
         resultMsg = e + data.toString().includes('转盘') ? '\n❗️ 尝试转一次转盘再获取cookie' : '\n❌ 请检查cookie' + '\n' + err
