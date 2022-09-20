@@ -57,6 +57,6 @@ keylol_AutoFree
     task keylol.js    
     
     [定时规则]   自行配置 http://cron.ciding.cc/
-    8 8 8 * *   
+    8 8 * * *   
     ```
 
