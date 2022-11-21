@@ -10,33 +10,33 @@ keylol_AutoFree
 
 
 
-### 运行环境
+### 测试环境
 
-- armbain
+- linux/armbain
 - docker qinglongv2.10.13
-- NodeJS
+- NodeJS/Python/Shell
 - 请自行安装运行依赖 
 
+### **一键安装**
+面板中 定时任务-添加任务-新增定时/docker请进入容器运行
 
+**后续操作将在 脚本管理-wsz987_keylol_AutoFree文件夹下进行**
+```
+ql repo https://github.com/wsz987/keylol_AutoFree.git
+```
 
 ### **使用**
 
-1. 将 [keylol_AutoFree.js](https://github.com/wsz987/keylol_AutoFree/blob/main/keylol_AutoFree.js) 及 [sendNotify.js](https://github.com/wsz987/keylol_AutoFree/blob/main/sendNotify.js)（非必须，此脚本为面板自带）脚本，放置于`脚本管理`根目录/自定义位置
+1. 消息推送请自行配置[sendNotify.js](https://github.com/whyour/qinglong/tree/master/sample)
 
-    ```
-    `docker/ql/scripts/keylol_AutoFree.js`
-    `docker/ql/scripts/sendNotify.js`
-    ```
-
-2. 消息推送请自行配置[sendNotify.js](https://github.com/wsz987/keylol_AutoFree/blob/main/sendNotify.js)
-
-3. 配置[keylol_AutoFree.js](https://github.com/wsz987/keylol_AutoFree/blob/main/keylol_AutoFree.js)
+2. 配置[keylol_AutoFree.js](https://github.com/wsz987/keylol_AutoFree/blob/main/keylol_AutoFree.js)
 
    ```javascript
    /*
     * @param name 账号名
     * @param rollNumber 抽奖次数 [0,3] 默认一次
     * @param cookie 建议转盘进行一次抽奖再获取cookie 'https://keylol.com'
+    * @Description: 支持多账号
     */
    const keylol_Users = [{
      name: "",
@@ -46,17 +46,3 @@ keylol_AutoFree
    // 随机抽奖延迟范围 默认100~1000ms
    const Random_Range = [100, 1000]
    ```
-
-4. **定时任务配置**/ `新建任务`  
-
-    ```
-    [名称]
-    keylol蒸汽消消乐
-    
-    [命令]      默认根目录，其他路径自行配置
-    task keylol.js    
-    
-    [定时规则]   自行配置 http://cron.ciding.cc/
-    8 8 * * *   
-    ```
-
