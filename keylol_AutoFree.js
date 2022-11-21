@@ -1,7 +1,8 @@
 ﻿/*
  * @Author: wsz987 https://github.com/wsz987/keylol_AutoFree
  * sendNotify 推送通知功能
- * cron [8 8 * * *]
+ * cron 8 8 * * * keylol_AutoFree.js
+ * new Env('keylol蒸汽消消乐');
  * @version 1.0
  * @Description: 其乐转盘每日蒸汽消消乐
  */
